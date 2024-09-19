@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #161927;
+}
+/*---------- PROFILE-----------*/
+.profile {
+    background-color: #2B304C;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 3px;
+}
+.profile_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0px 0px 9px #161927;
+}
+.profile_img-container {
+    background-color: #fff;
+    
+}
+
+.img-container{
+    max-width: 300px;
+        
+    
+}
+.profile_description-container h2 {
+    color: #8896e6;
+}
+.profile_description-container {
+    padding: 20px;
+    color: #fff;
+}
+
+.profile_skills {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.profile_skills h2 {
+    color: #8896e6;
+    align-content: center;
+}
+.box_skill {
+    
+    align-content: center;
+    border: 2px solid #3c3e4c;
+    border-radius: 5px;
+    padding: 10px;
+}
+.box_skill:hover {
+    opacity: 0.9;
+    outline: 2px solid #fff6;
+}
