@@ -1,10 +1,14 @@
 body {
-    margin: 0;
+    
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #161927;
 }
 * {
     box-sizing: border-box;
+}
+body, div, ul,nav, header,footer, a, li, label, input {
+    margin: 0;
+    padding: 0;
 }
 /*---------- PROFILE-----------*/
 .profile {
@@ -51,8 +55,9 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-around;
-    max-width: 800px;
+    max-width: 760px;
     padding: 20px;
+    background-color: #2B304C;
 }
 .profile_skills h2 {
     color: #8896e6;
@@ -77,7 +82,8 @@ body {
         
     }
     .profile_skills {
-        
+        margin: auto;
+        max-width: 450px;   
     }
     .img-container {
         height: 100%;
@@ -88,30 +94,56 @@ body {
 }
 
 /*------Project section---------*/
-.portfolio h2 {
-    color: #fff;
-    text-align: center;
-    
-}
+
 .portfolio {
+    background-color: #161927;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    container-name: port-project;
+    container-type: inline-size;
+    
+}
+.portfolio h2 {
+    color: #fff;
+    text-align: center;   
 }
 .portfolio__project-container {
-    display: flex;
-    flex-direction: row;
-    max-width: 1350px;
+    display: grid;
+    grid-template-columns: repeat(3, 400px) ;
+    grid-template-rows: repeat(3, 200px);   
     justify-content: center;
+    gap: 20px;
+    max-width: 1400px;
+    width: 100%;
+    background-color: #161927;
+    height: 84vh;
+    padding: 50px;
+}
+.portfolio_title {
+    font-size: 3rem;
+}
+.project_content {
+    background-image: linear-gradient(#0005, #0009), url("ezefolio.jpg");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    border: 2px solid black;
     background-color: #fff;
+    border-radius: 5px;
+}
+.project_content:hover {
+    opacity: 0.7;
+    outline: 2px solid#fff9;
 }
 
-.project_content {
-    margin-top: 20px;
-    border: 2px solid black;
-    background-color: red;
-    width: 200px;
-    height: 150px;
-    border-radius: 5px;
+/*-----project querie-----*/
+@container port-project (max-width:78.25rem)
+{
+    .portfolio__project-container {
+       grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        height: 200vh;
+    }    
 }
 
