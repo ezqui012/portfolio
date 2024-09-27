@@ -14,8 +14,7 @@ body, div, ul,nav, header,footer, a, li, label, input {
 .profile {
     container-name: profile;
     container-type: inline-size;
-
-    
+    animation: aparecer 2.4s -.6s both;
 }
 .profile_container{
     margin: auto;        
@@ -102,7 +101,6 @@ body, div, ul,nav, header,footer, a, li, label, input {
     flex-direction: column;
     container-name: port-project;
     container-type: inline-size;
-    
 }
 .portfolio h2 {
     color: #fff;
@@ -132,6 +130,10 @@ body, div, ul,nav, header,footer, a, li, label, input {
     border: 2px solid black;
     background-color: #fff;
     border-radius: 5px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 10% cover 40%;
+
 }
 .project_content:hover {
     opacity: 0.7;
@@ -147,3 +149,100 @@ body, div, ul,nav, header,footer, a, li, label, input {
     }    
 }
 
+/*---Form section----*/
+.form {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    padding: 40px;
+    color: #8896e6;
+    container-name: form;
+    container-type: inline-size;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: 20% contain 50%;
+}
+.form__form {
+    flex: 1;
+    background-color: #373f7d;
+    max-width: 600px;
+    width: 100%;
+    display: grid;
+    border-radius: 3px;
+    padding: 20px;
+}
+.form_title {
+    text-align: center;
+    color:#fff;
+}
+.form_input-container :is(input, textarea) {
+    width: 100%;
+    padding: 10px;
+    margin: 4px;
+    border: none;
+    box-shadow: 2px 2px 4px #001;
+    background-color: #fffd;
+}
+.form_input-container textarea {
+    min-height: 150px;
+    resize: none;
+}
+.form_input-container input[type="submit"] {
+    padding: 12px;
+    background-color: #161927;
+    color: #fff;
+}
+/*---Contact section Querie----*/
+@container form (min-width: 56.25rem){
+    .form__form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "name lastname"
+        "email email"
+        "message message"
+        "button button";
+        gap: 12px;
+        background-image: radial-gradient(#18233ff1, #18233f66);        
+        padding: 30px;
+        border-radius: 10px;
+        
+        box-shadow: 0px 0px 40px #0006;
+    }
+    .form_input-container:first-child {
+        grid-area: name;
+    }
+    .form_input-container:nth-child(2){
+        grid-area: lastname;
+    }
+    .form_input-container:nth-child(3){
+        grid-area: email;
+    }
+    .form_input-container:nth-child(4){
+        grid-area: message;
+    }
+    .form_input-container:nth-child(5){
+        grid-area: button;
+    }
+}
+/*CONTACT ENDS*/
+/*FOOTER*/
+footer {
+    border-top: 2px solid #2B304C;
+    padding: 30px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+/*Animations*/
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
